@@ -1,10 +1,10 @@
 "use client";
 
 import Page from "@/Components/Common/Page";
-import Button from "@/Components/Common/Button";
+import Home from "@/Components/Feature/Home/Home";
 
-export default function Home() {
-  return <Page className={"flex items-center justify-center"}>
-    <Button variant={"outlined"}>Click me</Button>
-  </Page>
+export default function Index() {
+    return <Page>
+        <Home/>
+    </Page>
 }
