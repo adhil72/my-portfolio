@@ -2,18 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  margin: 0;
+body {
+    margin: 0;
 }
 
-*{
-  transition: 0.2s;
+* {
+    transition: 0.2s;
     scroll-behavior: smooth;
 }
 
-.bg-gradient-to-r{
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+span.bg-gradient-to-r {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 @keyframes scaleInOut {
@@ -39,11 +39,11 @@ body{
 
 
 ::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+    width: 0;
+    height: 0;
 }
 
-.scrollable-div{
+.scrollable-div {
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #1373D1 rgba(245, 245, 245, 0);

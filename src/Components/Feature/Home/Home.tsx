@@ -2,12 +2,8 @@ import Container from "@/Components/Common/Container";
 import Flex from "@/Components/Common/Flex";
 import Box from "@/Components/Common/Box";
 import Button from "@/Components/Common/Button";
-import {BiLogoJavascript, BiLogoMongodb, BiLogoNodejs, BiLogoReact, BiLogoTypescript} from "react-icons/bi";
-import {SiExpress} from "react-icons/si";
 import {FiArrowUpRight} from "react-icons/fi";
-import {GrGoogle} from "react-icons/gr";
 import experiences from "@/Constants/Experiences";
-import {GiShoulderBag} from "react-icons/gi";
 import {MdHomeWork} from "react-icons/md";
 import works from "@/Constants/Works";
 import Image from "next/image";
@@ -15,9 +11,9 @@ import stacks from "@/Constants/Stacks";
 
 export default function Home() {
     return <Container>
-        <Flex className={"w-full pt-40 pb-20 flex-col items-center"}>
-            <Box className={"w-52 h-52 bg-secondary rounded-full"}>
-                {/*PROFILE PHOTO*/}
+        <Flex className={" pt-40 pb-20 flex-col items-center"}>
+            <Box className={"w-52 h-52 bg-gradient-to-r from-tint to-tint-alt rounded-full overflow-hidden p-1"}>
+                <Image src={"/images/me.png"} alt={"profile photo"} layout={"fill"} className={"!static rounded-full"}/>
             </Box>
             <span className={"text-5xl font-extrabold text-center mt-3"}>
                 I do code and <br/>make content <span
@@ -39,60 +35,54 @@ export default function Home() {
 
             {/*STACKS SECTION*/}
             <span className={"text-primary text-3xl font-bold mt-20 uppercase text-center"}>experience with</span>
-            <Box className={"w-full text-3xl pt-3 text-tint grid text-center grid-cols-4 md:grid-cols-7"}>
-                {
-                    stacks.map((Item, index) => <Box
-                        key={index}
-                        className={"mt-3 group rounded-full w-fit h-fit border border-2 border-tint p-5 ml-5"}>
-                        <Item/>
-                    </Box>)
-                }
+            <Box className={"w-full text-3xl pt-3 text-tint grid text-center grid-cols-4 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12"}>
+                {stacks.map((Item, index) => <Box
+                    key={index}
+                    className={"mt-3 group rounded-full w-fit h-fit border border-2 border-tint p-5 ml-5"}>
+                    <Item/>
+                </Box>)}
             </Box>
 
             {/*PROJECTS SECTION*/}
 
             <span className={"text-primary text-3xl font-bold mt-20 uppercase text-center"}>projects</span>
-            <Box className={"w-full grid grid-cols-1 md:grid-cols-2 mt-5 gap-5"}>
-                {
-                    works.map((item, index) => <Box key={index}
-                                                    className={"w-full bg-secondary hover:bg-secondary-light cursor-pointer rounded-2xl overflow-hidden"}>
-                        <Box className="w-full h-60">
-                            <Image className={"object-cover rounded-b-2xl !static"} layout={"fill"} src={item.image}
-                                   alt={"Project 1"}/>
+            <Box className={"w-full grid grid-cols-1 md:grid-cols-3 mt-5 gap-5"}>
+                {works.map((item, index) => <Box key={index}
+                                                 className={"group w-full bg-secondary hover:bg-secondary-light cursor-pointer rounded-2xl overflow-hidden"}>
+                    <Box className="w-full h-60 rounded-b-2xl overflow-hidden">
+                        <Image className={"object-cover rounded-b-2xl group-hover:scale-110 !static"} layout={"fill"} src={item.image}
+                               alt={"Project 1"}/>
+                    </Box>
+                    <Flex className={"p-5 items-center justify-between"}>
+                        <Box className={"flex flex-col"}>
+                            <span className={"uppercase text-xs font-bold"}>Click here to visit</span>
+                            <span className={"text-2xl font-bold uppercase"}>{item.title}</span>
                         </Box>
-                        <Flex className={"p-5 items-center justify-between"}>
-                            <Box className={"flex flex-col"}>
-                                <span className={"uppercase text-xs font-bold"}>Click here to visit</span>
-                                <span className={"text-2xl font-bold uppercase"}>{item.title}</span>
-                            </Box>
-                            <Box className={"font-bold text-xl"}>
-                                <FiArrowUpRight/>
-                            </Box>
-                        </Flex>
-                    </Box>)
-                }
+                        <Box className={"font-bold text-xl"}>
+                            <FiArrowUpRight/>
+                        </Box>
+                    </Flex>
+                </Box>)}
             </Box>
             <span className={"w-full text-xl font-bold mt-2 text-right"}><a
                 className={"hover:text-tint-alt text-primary"} href={"/projects"}>{"view full details ->"}</a></span>
 
             {/*EXPERIENCE SECTION*/}
             <span className={"text-primary mb-5 text-3xl font-bold mt-20 uppercase text-center"}>experience</span>
-            {
-                experiences.map((i, d) => <Box key={d} className={"w-full mt-5"}>
-                    <Flex className={"w-full flex-col lg:flex-row lg:justify-between"}>
-                        <Flex className={"flex-col lg:flex-row lg:items-center"}>
-                            <MdHomeWork className={"text-2xl"}/>
-                            <span className={"font-bold text-2xl mt-2 lg:mt-0 lg:ml-3"}>{i.company}</span>
-                        </Flex>
-                        <Box>
-                            <span className={"text-secondary text-lg"}>{i.endDate}</span>
-                        </Box>
+            {experiences.map((i, d) => <Box key={d} className={"w-full mt-5"}>
+                <Flex className={"w-full flex-col lg:flex-row lg:justify-between"}>
+                    <Flex className={"flex-col lg:flex-row lg:items-center"}>
+                        <MdHomeWork className={"text-2xl"}/>
+                        <span className={"font-bold text-2xl mt-2 lg:mt-0 lg:ml-3"}>{i.company}</span>
                     </Flex>
-                    <p className={"text-justify text-secondary my-3"}>
-                        {i.description}
-                    </p>
-                </Box>)
-            }
+                    <Box>
+                        <span className={"text-secondary text-lg"}>{i.endDate}</span>
+                    </Box>
+                </Flex>
+                <p className={"text-justify text-secondary my-3"}>
+                    {i.description}
+                </p>
+            </Box>)}
             <span className={"w-full text-xl font-bold mt-2 text-right"}><a
                 className={"hover:text-tint-alt text-primary"} href={"/projects"}>{"view all experiences ->"}</a></span>
 
