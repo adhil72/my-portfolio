@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import "./globals.css";
 import AppLayout from "./AppLayout";
+import Head from "next/head";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -17,6 +18,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+        <Head>
+            <meta name="google-site-verification" content="FbOZIJDxKuyR_owtbJoI3RnsV6ya1MyNg0oJEidIoHU"/>
+        </Head>
         <AppLayout className={inter.className}>
             {children}
         </AppLayout>
