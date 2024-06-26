@@ -35,7 +35,8 @@ export default function Home() {
 
             {/*STACKS SECTION*/}
             <span className={"text-primary text-3xl font-bold mt-20 uppercase text-center"}>experience with</span>
-            <Box className={"w-full text-3xl pt-3 text-tint grid text-center grid-cols-4 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12"}>
+            <Box
+                className={"w-full text-3xl pt-3 text-tint grid text-center grid-cols-4 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12"}>
                 {stacks.map((Item, index) => <Box
                     key={index}
                     className={"mt-3 group rounded-full w-fit h-fit border border-2 border-tint p-5 ml-5"}>
@@ -47,10 +48,12 @@ export default function Home() {
 
             <span className={"text-primary text-3xl font-bold mt-20 uppercase text-center"}>projects</span>
             <Box className={"w-full grid grid-cols-1 md:grid-cols-3 mt-5 gap-5"}>
-                {works.map((item, index) => <Box key={index}
+                {works.map((item, index) => <Box onClick={e => window.location.href = `/projects#prj-${index}`}
+                                                 key={index}
                                                  className={"group w-full bg-secondary hover:bg-secondary-light cursor-pointer rounded-2xl overflow-hidden"}>
                     <Box className="w-full h-60 rounded-b-2xl overflow-hidden">
-                        <Image className={"object-cover rounded-b-2xl group-hover:scale-110 !static"} layout={"fill"} src={item.image}
+                        <Image className={"object-cover rounded-b-2xl group-hover:scale-110 !static"} layout={"fill"}
+                               src={item.image}
                                alt={"Project 1"}/>
                     </Box>
                     <Flex className={"p-5 items-center justify-between"}>
