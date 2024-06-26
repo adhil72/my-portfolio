@@ -18,9 +18,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-        <Head>
+        <head>
             <meta name="google-site-verification" content="FbOZIJDxKuyR_owtbJoI3RnsV6ya1MyNg0oJEidIoHU"/>
-        </Head>
+        </head>
         <AppLayout className={inter.className}>
             {children}
         </AppLayout>
