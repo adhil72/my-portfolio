@@ -11,7 +11,7 @@ export default function Footer() {
         <Container className={"py-10"}>
             <span id={"contact"} className={"text-3xl font-bold text-primary"}>Contact</span>
             <p className="py-5 text-secondary text-lg">
-                I am a full stack developer. I have experience in building web applications using React, Node.js, Express, and MongoDB. I am also familiar with Typescript, NextJs, and Tailwind CSS. I am currently pursuing my bachelor's degree in computer science and engineering from Government engineering collage Wayanad. I have collaborated with many developers and worked on many projects
+                I am a full stack developer. I have experience in building web applications using React, Node.js, Express, and MongoDB. I am also familiar with Typescript, NextJs, and Tailwind CSS. I am currently pursuing my bachelor&apos;s degree in computer science and engineering from Government engineering collage Wayanad. I have collaborated with many developers and worked on many projects
             </p>
             <Flex className="text-lg text-primary items-center">
                 <AiOutlineMail/>  <span className={"ml-3"}>adhil.mhdk28@gmail.com</span>
