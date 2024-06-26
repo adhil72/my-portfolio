@@ -11,10 +11,6 @@ export default function AppLayout(props: React.HTMLAttributes<HTMLBodyElement>) 
         return {}
     }, [])
 
-    useEffect(() => {
-        require("../src/Configs/FirebaseConfig")
-    }, []);
-
     return <>
         <AppContext.Provider value={ContextData}>
             <body {...props} className={"bg-primary text-primary"}>

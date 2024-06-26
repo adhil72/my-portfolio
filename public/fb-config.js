@@ -1,8 +1,8 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 
 
-const firebaseConfig = {
+const fbConfig = {
     apiKey: "AIzaSyCct7h4llcpW-V8zkS-BsmzZBpoi9YjYLc",
     authDomain: "loyal-symbol-395803.firebaseapp.com",
     projectId: "loyal-symbol-395803",
@@ -12,7 +12,5 @@ const firebaseConfig = {
     measurementId: "G-JLW55LB5DF"
 };
 
-if (window) {
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-}
+const app = initializeApp(fbConfig);
+const analytics = getAnalytics(app);
